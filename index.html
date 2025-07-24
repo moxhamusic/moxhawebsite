@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MOXHA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      font-family: 'Orbitron', sans-serif;
+      overflow: hidden;
+    }
+
+    .background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      background: transparent;
+    }
+
+    .title-wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      line-height: 1.1;
+    }
+
+    .title-link {
+      text-decoration: none;
+    }
+
+    .title-line {
+      display: inline-flex;
+      justify-content: center;
+      align-items: flex-end;
+      font-size: 9vw;
+      color: #5e5e5e;
+      letter-spacing: 0.01em;
+      gap: 0.02em;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .title-line:hover::after {
+      content: "Experience MOXHA";
+      position: absolute;
+      bottom: 110%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #333;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 6px;
+      white-space: nowrap;
+      opacity: 1;
+      font-size: 1vw;
+      z-index: 10;
+    }
+
+    .title-line::after {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .title-line span {
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    .title-line span:hover {
+      color: red;
+    }
+
+    .x {
+      color: red;
+    }
+
+    .title-line:hover span {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+    }
+
+    .who {
+      margin-top: 18vh;
+      font-size: 0.9vw;
+      color: white;
+      opacity: 0.9;
+      font-weight: normal;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      padding: 0.2em 0.6em;
+      border-radius: 4px;
+    }
+    .who:hover {
+      background-color: rgba(94, 94, 94, 0.3);
+    }
+
+    .menu {
+      position: absolute;
+      font-size: 4.5vw;
+      transform: rotate(-25deg);
+      width: 20vw;
+      text-align: center;
+      text-shadow: 1px 1px 0 #5e5e5e, -1px -1px 0 #5e5e5e, 1px -1px 0 #5e5e5e, -1px 1px 0 #5e5e5e;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: black;
+      transition: color 0.2s ease;
+    }
+
+    .menu a:hover {
+      color: red;
+    }
+
+    .music     { top: 13vh; left: 8vw; }
+    .merch     { top: 13vh; right: 8vw; }
+    .tech      { bottom: 10vh; left: 8vw; }
+    .teachings { bottom: 10vh; right: 8vw; }
+
+    .about-popup {
+      font-family: 'Work Sans', sans-serif;
+      display: none;
+      position: fixed;
+      top: 8%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 85%;
+      max-width: 680px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 2rem;
+      border-radius: 10px;
+      z-index: 999;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      color: #333;
+      line-height: 1.6;
+      font-size: 0.9vw;
+    }
+
+    .about-popup h2 {
+      text-transform: lowercase;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      font-family: 'Orbitron', sans-serif;
+      color: #444;
+      text-align: center;
+    }
+
+    .about-popup h3 {
+      font-size: 1.2rem;
+      margin-top: 1.8rem;
+      color: #666;
+    }
+
+    .about-popup p {
+      margin-bottom: 1rem;
+    }
+
+    .about-popup hr {
+      border: none;
+      border-top: 1px solid #ccc;
+      margin: 2rem 0;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 1.5rem;
+      color: #999;
+      cursor: pointer;
+    }
+    .close-btn:hover {
+      color: #000;
+    }
+
+    .social-icons {
+      position: fixed;
+      bottom: 7vh;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      display: inline-block;
+    }
+
+    .social-icons img {
+      width: 24px;
+      height: 24px;
+      filter: invert(50%) grayscale(100%) brightness(.8);
+      transition: filter 0.3s ease;
+    }
+
+    .social-icons img:hover {
+      filter: invert(50%) grayscale(100%) brightness(1);
+    }
+
+    @media (max-width: 768px) {
+      .title-line { font-size: 13vw; flex-wrap: wrap; }
+      .menu { font-size: 6vw; width: 20vw; }
+      .tech, .teachings { bottom: 18vh !important; }
+      .who { font-size: 2.5vw; }
+      .about-popup { font-size: 2.8vw; padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <video class="background-video" autoplay muted loop playsinline>
+    <source src="https://github.com/moxhamusic/moxha/raw/2fe7b20fa0d07d6cd82c1ae2a31ac5b4f3fd4070/video%20(fashin)%201%20handbraked.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="container">
+    <div class="title-wrapper">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdiIEw9sUK-rAorwOhyb-dBPgrATsHZF66R_-XAWD8OwJqK5w/viewform?usp=header" target="_blank" class="title-link">
+        <div class="title-line">
+          <span>M</span>
+          <span>O</span>
+          <span class="x">X</span>
+          <span>H</span>
+          <span>A</span>
+        </div>
+      </a>
+      <div class="who" onclick="toggleAbout()">who are we?</div>
+    </div>
+
+    <div class="menu music"><a href="https://music.apple.com/in/artist/moxha/1568138271" target="_blank">music</a></div>
+    <div class="menu merch"><a href="#" onclick="alert('Merch page is under construction! Check back soon.'); return false;">merch</a></div>
+    <div class="menu tech"><a href="#" onclick="alert('Tech page is under construction! Stay tuned.'); return false;">tech</a></div>
+    <div class="menu teachings"><a href="https://youtube.com/playlist?list=PLWZNtdEjVpWaevtoGY1MySRWlyc4oRuuD&si=UiKIeGgylka27Qja" target="_blank">teachings</a></div>
+  </div>
+
+  <div class="social-icons">
+    <a href="https://instagram.com/moxha.in" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
+    </a>
+  </div>
+
+  <div id="aboutPopup" class="about-popup">
+    <div class="close-btn" onclick="toggleAbout()">✕</div>
+    <h2>who are we?</h2>
+    <p><strong>MOXHA</strong> started out as a music brand in 2021, which was an evolved variation of Prthvi Prabhax. The moto behind MOXHA was to make music that could change the way people perceive reality, thus bringing down suffering and making a better world.</p>
+    <p>The name MOXHA stands as a crossbreed between Sanskrit terms <em>mōhā</em> and <em>mōkṣa</em>. According to various ancient Indian seekers, mōhā—the desire—has to be seized to attain mōkṣa, the attainment (of enlightenment). At MOXHA, we try to create from a place where there is a desire to attain mōkṣa, which is a desire to kill desire itself!</p>
+    <hr>
+    <h3>about the founder</h3>
+    <p><strong>Prithwin KP</strong>, the founder of MOXHA, was a creative soul who learned ancient Indian music as a child. As the electronic music revolution hit the youth in 2000s, Prithwin’s musical desires diverted to being a DJ who makes music and travels the world. He learned electronic music production and released music under the name Prthvi Prabhax.</p>
+    <p>In 2021, he paused that identity and began academic research on music that could evoke spiritual qualities in consciousness for his project MOXHA. Although transitioning to a new brand led to a drop in his hip-hop market presence, Prithwin received overwhelming support from Buddhist communities, including teachers, monks, lay practitioners, and most notably, Dzongsar Khyentse Rinpoche. With this unconditional love, Prithwin moves forward with MOXHA and its mission, undefeated.</p>
+  </div>
+
+  <script>
+    function toggleAbout() {
+      const popup = document.getElementById('aboutPopup');
+      popup.style.display = popup.style.display === 'none' ? 'block' : 'none';
+    }
+  </script>
+</body>
+</html>
