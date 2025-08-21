@@ -110,6 +110,9 @@
       transition: background-color 0.3s ease, color 0.3s ease;
       padding: 0.2em 0.6em;
       border-radius: 4px;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+      touch-action: manipulation;
     }
     .who:hover {
       background-color: rgba(94, 94, 94, 0.3);
@@ -143,11 +146,12 @@
       font-family: 'Work Sans', sans-serif;
       display: none;
       position: fixed;
-      top: 8%;
+      top: 5%;
       left: 50%;
       transform: translateX(-50%);
       width: 85%;
       max-width: 680px;
+      max-height: 85vh;
       background: rgba(255, 255, 255, 0.95);
       padding: 2rem;
       border-radius: 10px;
@@ -156,6 +160,8 @@
       color: #333;
       line-height: 1.6;
       font-size: 0.9vw;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
     }
 
     .about-popup h2 {
@@ -190,17 +196,53 @@
       font-size: 1.5rem;
       color: #999;
       cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+      touch-action: manipulation;
     }
     .close-btn:hover {
       color: #000;
     }
 
-    .social-icons {
+    .bottom-section {
       position: fixed;
       bottom: 7vh;
       left: 50%;
       transform: translateX(-50%);
       z-index: 100;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2vh;
+    }
+
+    .bookings-btn {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.8vw;
+      color: white;
+      background: rgba(94, 94, 94, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 0.4em 1.2em;
+      border-radius: 20px;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+
+    .bookings-btn:hover {
+      background: rgba(255, 0, 0, 0.2);
+      border-color: rgba(255, 0, 0, 0.5);
+      color: #ff4444;
+      transform: translateY(-2px);
+    }
+
+    .social-icons {
+      display: flex;
+      align-items: center;
     }
 
     .social-icons a {
@@ -225,21 +267,76 @@
         flex-wrap: nowrap;
         white-space: nowrap;
       }
+      .title-line:hover::after {
+        font-size: 3vw;
+      }
+      .bookings-btn {
+        font-size: 2.2vw;
+        padding: 0.5em 1.4em;
+      }
       .menu { font-size: 6vw; width: 20vw; }
       .tech, .teachings { bottom: 18vh !important; }
       .who { font-size: 2.5vw; }
-      .about-popup { font-size: 2.8vw; padding: 1.5rem; }
+      .about-popup { 
+        font-size: 3.5vw; 
+        padding: 1.5rem;
+        top: 2%;
+        width: 92%;
+        max-height: 92vh;
+      }
+      .about-popup h2 {
+        font-size: 5vw;
+      }
+      .about-popup h3 {
+        font-size: 4vw;
+      }
     }
 
     @media (max-width: 480px) {
       .title-line {
         font-size: min(15vw, 50px);
       }
+      .title-line:hover::after {
+        font-size: 3.5vw;
+      }
+      .bookings-btn {
+        font-size: 2.8vw;
+        padding: 0.6em 1.5em;
+      }
+      .about-popup {
+        padding: 1.2rem;
+        font-size: 4vw;
+        top: 1%;
+        width: 95%;
+        max-height: 95vh;
+      }
+      .about-popup h2 {
+        font-size: 5.5vw;
+      }
+      .about-popup h3 {
+        font-size: 4.5vw;
+      }
     }
 
     @media (max-width: 320px) {
       .title-line {
         font-size: min(18vw, 45px);
+      }
+      .title-line:hover::after {
+        font-size: 4vw;
+      }
+      .bookings-btn {
+        font-size: 3.2vw;
+      }
+      .about-popup {
+        padding: 1rem;
+        font-size: 4.5vw;
+      }
+      .about-popup h2 {
+        font-size: 6vw;
+      }
+      .about-popup h3 {
+        font-size: 5vw;
       }
     }
   </style>
@@ -270,10 +367,14 @@
     <div class="menu teachings"><a href="https://youtube.com/playlist?list=PLWZNtdEjVpWaevtoGY1MySRWlyc4oRuuD&si=UiKIeGgylka27Qja" target="_blank">teachings</a></div>
   </div>
 
-  <div class="social-icons">
-    <a href="https://instagram.com/moxha.in" target="_blank">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
-    </a>
+  <div class="bottom-section">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdiIEw9sUK-rAorwOhyb-dBPgrATsHZF66R_-XAWD8OwJqK5w/viewform?usp=header" target="_blank" class="bookings-btn">bookings</a>
+    
+    <div class="social-icons">
+      <a href="https://instagram.com/moxha.in" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
+      </a>
+    </div>
   </div>
 
   <div id="aboutPopup" class="about-popup">
@@ -290,8 +391,32 @@
   <script>
     function toggleAbout() {
       const popup = document.getElementById('aboutPopup');
-      popup.style.display = popup.style.display === 'none' ? 'block' : 'none';
+      if (popup.style.display === 'block') {
+        popup.style.display = 'none';
+      } else {
+        popup.style.display = 'block';
+      }
     }
+
+    // Prevent double-tap zoom on mobile for the about button
+    document.addEventListener('DOMContentLoaded', function() {
+      const whoButton = document.querySelector('.who');
+      const closeBtn = document.querySelector('.close-btn');
+      
+      if (whoButton) {
+        whoButton.addEventListener('touchend', function(e) {
+          e.preventDefault();
+          toggleAbout();
+        });
+      }
+      
+      if (closeBtn) {
+        closeBtn.addEventListener('touchend', function(e) {
+          e.preventDefault();
+          toggleAbout();
+        });
+      }
+    });
   </script>
 </body>
 </html>
