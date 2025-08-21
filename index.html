@@ -55,6 +55,9 @@
       gap: 0.02em;
       position: relative;
       cursor: pointer;
+      white-space: nowrap;
+      flex-wrap: nowrap;
+      min-width: fit-content;
     }
 
     .title-line:hover::after {
@@ -81,6 +84,7 @@
 
     .title-line span {
       transition: color 0.3s ease, text-shadow 0.3s ease;
+      flex-shrink: 0;
     }
 
     .title-line span:hover {
@@ -216,11 +220,27 @@
     }
 
     @media (max-width: 768px) {
-      .title-line { font-size: 13vw; flex-wrap: wrap; }
+      .title-line { 
+        font-size: min(13vw, 60px);
+        flex-wrap: nowrap;
+        white-space: nowrap;
+      }
       .menu { font-size: 6vw; width: 20vw; }
       .tech, .teachings { bottom: 18vh !important; }
       .who { font-size: 2.5vw; }
       .about-popup { font-size: 2.8vw; padding: 1.5rem; }
+    }
+
+    @media (max-width: 480px) {
+      .title-line {
+        font-size: min(15vw, 50px);
+      }
+    }
+
+    @media (max-width: 320px) {
+      .title-line {
+        font-size: min(18vw, 45px);
+      }
     }
   </style>
 </head>
@@ -263,7 +283,7 @@
     <p>The name MOXHA stands as a crossbreed between Sanskrit terms <em>mōhā</em> and <em>mōkṣa</em>. According to various ancient Indian seekers, mōhā—the desire—has to be seized to attain mōkṣa, the attainment (of enlightenment). At MOXHA, we try to create from a place where there is a desire to attain mōkṣa, which is a desire to kill desire itself!</p>
     <hr>
     <h3>about the founder</h3>
-    <p><strong>Prithwin KP</strong>, the founder of MOXHA, was a creative soul who learned ancient Indian music as a child. As the electronic music revolution hit the youth in 2000s, Prithwin’s musical desires diverted to being a DJ who makes music and travels the world. He learned electronic music production and released music under the name Prthvi Prabhax.</p>
+    <p><strong>Prithwin KP</strong>, the founder of MOXHA, was a creative soul who learned ancient Indian music as a child. As the electronic music revolution hit the youth in 2000s, Prithwin's musical desires diverted to being a DJ who makes music and travels the world. He learned electronic music production and released music under the name Prthvi Prabhax.</p>
     <p>In 2021, he paused that identity and began academic research on music that could evoke spiritual qualities in consciousness for his project MOXHA. Although transitioning to a new brand led to a drop in his hip-hop market presence, Prithwin received overwhelming support from Buddhist communities, including teachers, monks, lay practitioners, and most notably, Dzongsar Khyentse Rinpoche. With this unconditional love, Prithwin moves forward with MOXHA and its mission, undefeated.</p>
   </div>
 
