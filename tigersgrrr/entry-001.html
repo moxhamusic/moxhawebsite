@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>tara set intro 1 — lawless geometry · Tiger's Grrr</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Entry 001: tara set intro 1 by MOXHA. The sound of post-colonial India. Ancient Carnatic microtonality meets FM synthesis, Tibetan Buddhism, and 11/8 time. The opening document of a worldview."/>
+  <meta name="keywords" content="MOXHA, tara set intro 1, lawless geometry, post-colonial India, Tibetan Buddhism, Nalanda, EDM, Carnatic, FM synthesis, 11/8, Dzongsar Khyentse Rinpoche, Tiger's Grrr"/>
+  <meta property="og:title" content="tara set intro 1 — lawless geometry · MOXHA"/>
+  <meta property="og:description" content="The first formal document submitted to Tiger's Grrr. Ancient spiritual discipline collides with modern sub-bass architecture."/>
+  <meta property="og:type" content="article"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{
+      font-family:'DM Sans',sans-serif;
+      background:#080200;color:#c8a060;
+      min-height:100vh;
+    }
+    body::before{
+      content:'';position:fixed;inset:0;
+      background:repeating-linear-gradient(112deg,rgba(232,123,42,0.032) 0px,rgba(232,123,42,0.032) 7px,transparent 7px,transparent 26px);
+      pointer-events:none;z-index:0;
+    }
+
+    /* NAV */
+    .nav{
+      position:sticky;top:0;z-index:10;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:16px 40px;
+      background:rgba(8,2,0,0.92);
+      border-bottom:1px solid rgba(232,123,42,0.15);
+      backdrop-filter:blur(8px);
+    }
+    .nav-logo{
+      font-family:'Playfair Display',serif;
+      font-size:18px;font-weight:900;color:#F5A44A;
+      text-decoration:none;letter-spacing:-0.5px;
+    }
+    .nav-logo em{color:#fff;font-style:italic;}
+    .nav-back{
+      font-size:11px;letter-spacing:2px;
+      text-transform:uppercase;color:#6a4020;
+      text-decoration:none;
+    }
+    .nav-back:hover{color:#F5A44A;}
+
+    /* HEADER */
+    .article-header{
+      position:relative;z-index:1;
+      padding:48px 40px 40px;
+      border-bottom:1px solid rgba(232,123,42,0.1);
+      overflow:hidden;
+    }
+    .article-header::after{
+      content:'001';
+      position:absolute;right:-10px;bottom:-20px;
+      font-family:'Playfair Display',serif;
+      font-size:220px;font-weight:900;
+      color:rgba(232,123,42,0.03);
+      line-height:1;pointer-events:none;
+    }
+    .header-inner{
+      max-width:1100px;margin:0 auto;
+      display:grid;grid-template-columns:1fr 300px;
+      gap:40px;align-items:start;
+    }
+    .entry-label{
+      font-size:10px;letter-spacing:4px;
+      text-transform:uppercase;color:#E87B2A;
+      margin-bottom:12px;
+    }
+    .article-title{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(36px,5vw,58px);
+      font-weight:900;color:#fff;
+      line-height:1.0;letter-spacing:-1.5px;
+      margin-bottom:8px;
+    }
+    .article-subtitle{
+      font-family:'Playfair Display',serif;
+      font-size:20px;font-style:italic;
+      color:#6a4020;margin-bottom:28px;
+    }
+    .meta-row{
+      display:flex;gap:6px;align-items:center;
+      flex-wrap:wrap;margin-bottom:20px;
+    }
+    .meta-chip{
+      font-size:10px;letter-spacing:2px;
+      text-transform:uppercase;color:#5a3c18;
+    }
+    .meta-sep{color:#2a1408;}
+    .tag-row{display:flex;gap:6px;flex-wrap:wrap;}
+    .tag{
+      font-size:9px;letter-spacing:2px;
+      text-transform:uppercase;color:#E87B2A;
+      border:0.5px solid rgba(232,123,42,0.35);
+      padding:4px 9px;border-radius:2px;
+    }
+
+    /* COVER ART */
+    .cover-art{
+      border-radius:4px;overflow:hidden;
+      aspect-ratio:1;background:#0a0200;
+      border:0.5px solid rgba(232,123,42,0.2);
+      position:relative;
+      display:flex;align-items:center;justify-content:center;
+    }
+    .cover-art canvas{position:absolute;inset:0;width:100%;height:100%;}
+    .cover-label{position:relative;z-index:2;text-align:center;}
+    .cover-label-main{
+      font-family:'Playfair Display',serif;
+      font-size:24px;font-weight:900;
+      color:rgba(245,164,74,0.85);
+    }
+    .cover-label-sub{
+      font-size:9px;letter-spacing:3px;
+      text-transform:uppercase;
+      color:rgba(130,70,15,0.65);margin-top:5px;
+    }
+
+    /* STREAMING */
+    .stream-bar{
+      position:relative;z-index:1;
+      background:#050100;
+      border-bottom:1px solid rgba(232,123,42,0.1);
+      padding:18px 40px;
+      display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+    }
+    .stream-label{
+      font-size:10px;letter-spacing:3px;
+      text-transform:uppercase;color:#4a3010;
+      white-space:nowrap;flex-shrink:0;
+    }
+    .stream-links{display:flex;gap:8px;flex-wrap:wrap;flex:1;}
+    .stream-btn{
+      font-size:10px;letter-spacing:1.5px;
+      text-transform:uppercase;
+      color:#c8a060;
+      border:0.5px solid rgba(200,160,96,0.25);
+      padding:7px 14px;border-radius:2px;
+      text-decoration:none;
+      transition:all 0.2s;
+      background:transparent;
+    }
+    .stream-btn:hover,.stream-btn.primary{
+      border-color:#E87B2A;color:#F5A44A;
+      background:rgba(232,123,42,0.07);
+    }
+
+    /* BODY */
+    .article-body{
+      position:relative;z-index:1;
+      max-width:1100px;margin:0 auto;
+      padding:48px 40px;
+      display:grid;
+      grid-template-columns:1fr 220px;
+      gap:56px;align-items:start;
+    }
+
+    .prose-section{margin-bottom:36px;}
+    .prose-heading{
+      font-family:'Playfair Display',serif;
+      font-size:22px;font-weight:700;color:#d4a060;
+      margin-bottom:16px;padding-bottom:10px;
+      border-bottom:0.5px solid rgba(232,123,42,0.12);
+    }
+    .prose p{
+      font-size:15px;line-height:1.85;
+      color:#8a6a40;margin-bottom:18px;
+    }
+    .prose p:last-child{margin-bottom:0;}
+
+    .pull-quote{
+      margin:32px 0;padding:22px 26px;
+      border-left:2px solid #E87B2A;
+      background:rgba(232,123,42,0.04);
+      position:relative;
+    }
+    .pull-quote::before{
+      content:'\201C';
+      font-family:'Playfair Display',serif;
+      font-size:80px;color:rgba(232,123,42,0.12);
+      position:absolute;top:-10px;left:18px;line-height:1;
+    }
+    .pull-quote p{
+      font-family:'Playfair Display',serif;
+      font-size:17px;font-style:italic;
+      color:#c8a060;line-height:1.65;
+      margin:0;position:relative;z-index:1;
+    }
+
+    .callout{
+      background:rgba(232,123,42,0.05);
+      border:0.5px solid rgba(232,123,42,0.18);
+      border-radius:3px;padding:18px 22px;
+      margin:24px 0;
+    }
+    .callout-label{
+      font-size:9px;letter-spacing:3px;
+      text-transform:uppercase;color:#E87B2A;
+      margin-bottom:8px;
+    }
+    .callout p{
+      font-size:13px;color:#7a5a30;
+      line-height:1.7;margin:0;
+    }
+    .accent{color:#d4a060;font-style:normal;}
+
+    /* SIDEBAR */
+    .sidebar{}
+    .sidebar-block{
+      margin-bottom:24px;padding-bottom:24px;
+      border-bottom:0.5px solid rgba(232,123,42,0.1);
+    }
+    .sidebar-block:last-child{border-bottom:none;margin-bottom:0;}
+    .sidebar-heading{
+      font-size:9px;letter-spacing:3px;
+      text-transform:uppercase;color:#E87B2A;
+      margin-bottom:12px;
+    }
+    .social-row{
+      display:flex;align-items:center;gap:10px;
+      padding:7px 0;text-decoration:none;
+      border-bottom:0.5px solid rgba(232,123,42,0.06);
+      transition:all 0.2s;
+    }
+    .social-row:last-child{border-bottom:none;}
+    .social-row:hover .soc-name{color:#F5A44A;}
+    .soc-icon{
+      width:26px;height:26px;flex-shrink:0;
+      background:rgba(232,123,42,0.07);
+      border:0.5px solid rgba(232,123,42,0.18);
+      border-radius:3px;
+      display:flex;align-items:center;justify-content:center;
+      font-size:10px;color:#E87B2A;
+      font-family:'DM Sans',sans-serif;font-weight:500;
+      letter-spacing:0;
+    }
+    .soc-info{}
+    .soc-name{
+      font-size:12px;font-weight:500;
+      color:#8a6a40;display:block;line-height:1.2;
+    }
+    .soc-handle{
+      font-size:10px;color:#3a2008;letter-spacing:0.5px;
+    }
+    .devotion{
+      background:rgba(232,123,42,0.04);
+      border:0.5px solid rgba(232,123,42,0.12);
+      border-radius:3px;padding:14px 16px;
+    }
+    .devotion-label{
+      font-size:9px;letter-spacing:2.5px;
+      text-transform:uppercase;color:#4a3010;
+      margin-bottom:8px;
+    }
+    .devotion p{
+      font-family:'Playfair Display',serif;
+      font-size:12px;font-style:italic;
+      color:#6a4a20;line-height:1.65;margin:0;
+    }
+
+    /* FOOTER */
+    .article-footer{
+      position:relative;z-index:1;
+      background:#050100;
+      border-top:1px solid rgba(232,123,42,0.1);
+      padding:20px 40px;
+      display:flex;align-items:center;
+      justify-content:space-between;flex-wrap:wrap;gap:12px;
+    }
+    .footer-logo{
+      font-family:'Playfair Display',serif;
+      font-size:16px;font-weight:900;color:#F5A44A;
+    }
+    .footer-logo em{color:#fff;font-style:italic;}
+    .footer-copy{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#3a2008;}
+    .footer-nav{display:flex;gap:20px;}
+    .footer-nav a{
+      font-size:11px;letter-spacing:2px;
+      text-transform:uppercase;color:#5a3c18;
+      text-decoration:none;
+    }
+    .footer-nav a:hover{color:#F5A44A;}
+
+    @media(max-width:768px){
+      .nav{padding:14px 20px;}
+      .article-header{padding:36px 20px 28px;}
+      .header-inner{grid-template-columns:1fr;}
+      .cover-art{max-width:260px;margin:0 auto;}
+      .stream-bar{padding:14px 20px;}
+      .article-body{grid-template-columns:1fr;padding:32px 20px;}
+      .article-footer{padding:16px 20px;}
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-logo" href="tigers-grrr.html">Tiger's <em>Grrr</em></a>
+  <a class="nav-back" href="tigers-grrr.html">← all entries</a>
+</nav>
+
+<div class="article-header">
+  <div class="header-inner">
+    <div>
+      <div class="entry-label">Entry 001 · Music · MOXHA</div>
+      <h1 class="article-title">tara set intro 1</h1>
+      <div class="article-subtitle">lawless geometry</div>
+      <div class="meta-row">
+        <span class="meta-chip">By Prithwin</span>
+        <span class="meta-sep">·</span>
+        <span class="meta-chip">May 2026</span>
+        <span class="meta-sep">·</span>
+        <span class="meta-chip">8 min read</span>
+      </div>
+      <div class="tag-row">
+        <span class="tag">EDM</span>
+        <span class="tag">Post-Colonial India</span>
+        <span class="tag">Tibetan Buddhism</span>
+        <span class="tag">Carnatic</span>
+        <span class="tag">Nalanda</span>
+        <span class="tag">11/8</span>
+      </div>
+    </div>
+    <div class="cover-art">
+      <canvas id="coverCanvas"></canvas>
+      <div class="cover-label">
+        <div class="cover-label-main">MOXHA</div>
+        <div class="cover-label-sub">tara set intro 1</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="stream-bar">
+  <div class="stream-label">Listen now</div>
+  <div class="stream-links">
+    <a class="stream-btn primary" href="#" target="_blank">Spotify</a>
+    <a class="stream-btn" href="#" target="_blank">Apple Music</a>
+    <a class="stream-btn" href="#" target="_blank">SoundCloud</a>
+    <a class="stream-btn" href="#" target="_blank">YouTube Music</a>
+    <a class="stream-btn" href="#" target="_blank">Bandcamp</a>
+  </div>
+</div>
+
+<div class="article-body">
+  <div class="prose">
+
+    <div class="prose-section">
+      <p>There is a specific kind of silence that occurs right before a system fails. It is the sound of a legacy being stretched until it snaps. With <em>tara set intro 1</em>, MOXHA is not just presenting a track — it is submitting the first formal document to Tiger's Grrr, a new perspective dedicated to tracking the violent collision of ideas, art, and philosophy that the modern world tries to keep separate.</p>
+      <p>Tiger's Grrr is a landscape that refuses to stay in a single lane. While this first entry anchors itself in sonic disruption, this space is a broader exploration of how consciousness adapts, resists, and mutates across mediums.</p>
+      <p>The track was born from a singular, uncompromising intention: to truly shatter the ego while remaining deeply melodic and fiercely wrathful. It moves fluidly through the different moods of Tara Devi, shifting from serene grace to terrifying power in an unapologetically MOXHA way.</p>
+    </div>
+
+    <div class="pull-quote">
+      <p>This is not just a song. This is the resurrected roar of the Nalanda masters — the raw energy of Tibetan Buddhism channeled through high-frequency sound design. A direct, challenging question of "what if?" thrown at the face of mainstream music.</p>
+    </div>
+
+    <div class="prose-section">
+      <h2 class="prose-heading">The Sound of Post-Colonial India</h2>
+      <p>Prithwin is consciously naming this sonic architecture <em>the sound of post-colonial India</em>. This music does not exist in a vacuum — it is a direct, visceral reaction to India's colonial past and the systemic, generational friction it created along his own creative and personal journey.</p>
+      <p>Colonialism sought to categorize, sanitize, and dilute indigenous artistic traditions to fit a Western lens. By rejecting standard musical templates, breaking artificial boundaries, and reclaiming sacred structures on his own terms, Prithwin uses sound as a vehicle for decolonization. It is an act of defiance against the historical forces that tried to suppress this lineage — transforming past trauma into raw, modern power.</p>
+    </div>
+
+    <div class="prose-section">
+      <h2 class="prose-heading">Lawless Geometry</h2>
+      <p>The track opens in a state of ancient grace. It is the sound of a Carnatic prodigy's mind, unchained from the rigid scale rules of traditional ragas. The microtonal vocabulary of South Indian classical music is utilized not as a museum piece, but as a living, lawless weapon. Beautiful, haunting, and deeply melodic — until the floor falls out.</p>
+
+      <div class="callout">
+        <div class="callout-label">The Drop</div>
+        <p>The center of the piece is dominated by a "soul-disturbing" FM screech drop — a high-frequency, digital awakening that shatters the acoustic serenity of the intro. Terrifying, unapologetic, and designed for the massive green laser-lit stages of the global underground. It is the sound of Siddhartha stepping into the darkness of the club and finding enlightenment in the noise.</p>
+      </div>
+
+      <p>Perhaps the most defiant act occurs in the resolution. As the digital violence fades, the track doesn't return to a standard 4/4 groove. Instead, it settles into a complex, asymmetrical <span class="accent">11/8</span> time signature — a rolling, psychedelic outro that forces a shift in consciousness, requiring the listener to actively engage with the structure rather than passively absorb it.</p>
+      <p>The visual identity — a low-resolution, high-contrast snapshot of a festival stage with Green Tara looming in the backdrop — mirrors this raw intent. It is an anti-design statement that favors the visceral over the polished. The first roar from a space dedicated to ideas that refuse to apologize for their own complexity.</p>
+    </div>
+
+    <div class="prose-section">
+      <h2 class="prose-heading">A Devotional Offering</h2>
+      <p>In executing this vision, Prithwin wishes to extend his deepest gratitude to Dzongsar Jamyang Khyentse Rinpoche. Rinpoche's support provided the exact, sacred space needed to build these songs — a sanctuary where one can actively practice the Dharma while remaining internally peaceful.</p>
+      <p>This entire release is not just a commercial drop. It is a profound, conscious offering directly to him.</p>
+      <p><em>tara set intro 1</em> is now live. The lawless geometry has begun.</p>
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-block">
+      <div class="sidebar-heading">MOXHA</div>
+      <a class="social-row" href="https://instagram.com/moxha.in" target="_blank">
+        <div class="soc-icon">ig</div>
+        <div class="soc-info"><span class="soc-name">Instagram</span><span class="soc-handle">@moxha.in</span></div>
+      </a>
+      <a class="social-row" href="https://music.apple.com/in/artist/moxha/1568138271" target="_blank">
+        <div class="soc-icon">am</div>
+        <div class="soc-info"><span class="soc-name">Apple Music</span><span class="soc-handle">MOXHA</span></div>
+      </a>
+      <a class="social-row" href="#" target="_blank">
+        <div class="soc-icon">sp</div>
+        <div class="soc-info"><span class="soc-name">Spotify</span><span class="soc-handle">MOXHA</span></div>
+      </a>
+      <a class="social-row" href="#" target="_blank">
+        <div class="soc-icon">sc</div>
+        <div class="soc-info"><span class="soc-name">SoundCloud</span><span class="soc-handle">moxha</span></div>
+      </a>
+      <a class="social-row" href="#" target="_blank">
+        <div class="soc-icon">yt</div>
+        <div class="soc-info"><span class="soc-name">YouTube</span><span class="soc-handle">MOXHA</span></div>
+      </a>
+    </div>
+
+    <div class="sidebar-block">
+      <div class="sidebar-heading">Tiger's Grrr</div>
+      <a class="social-row" href="#" target="_blank">
+        <div class="soc-icon">ig</div>
+        <div class="soc-info"><span class="soc-name">Instagram</span><span class="soc-handle">@tigersgrrr</span></div>
+      </a>
+      <a class="social-row" href="#" target="_blank">
+        <div class="soc-icon">x</div>
+        <div class="soc-info"><span class="soc-name">X / Twitter</span><span class="soc-handle">@tigersgrrr</span></div>
+      </a>
+    </div>
+
+    <div class="sidebar-block">
+      <div class="sidebar-heading">Dedication</div>
+      <div class="devotion">
+        <div class="devotion-label">A devotional offering</div>
+        <p>This release is a profound, conscious offering to Dzongsar Jamyang Khyentse Rinpoche, whose support provided the sacred space needed to build these songs.</p>
+      </div>
+    </div>
+
+  </aside>
+</div>
+
+<footer class="article-footer">
+  <div class="footer-logo">Tiger's <em>Grrr</em></div>
+  <div class="footer-copy">Entry 001 · © 2026 MOXHA</div>
+  <nav class="footer-nav">
+    <a href="tigers-grrr.html">all entries</a>
+    <a href="index.html">moxha.in</a>
+  </nav>
+</footer>
+
+<script>
+const c=document.getElementById('coverCanvas');
+if(c){
+  const ctx=c.getContext('2d');
+  function draw(){
+    const W=c.offsetWidth||280,H=c.offsetHeight||280;
+    c.width=W;c.height=H;
+    ctx.fillStyle='#0a0200';ctx.fillRect(0,0,W,H);
+    for(let i=0;i<1500;i++){
+      ctx.fillStyle=`rgba(200,120,40,${Math.random()*0.07})`;
+      ctx.fillRect(Math.random()*W,Math.random()*H,1,1);
+    }
+    const stripes=[
+      {x:W*0.3,y:H*0.1,w:10,h:55,r:-0.28},{x:W*0.45,y:H*0.06,w:7,h:45,r:-0.22},
+      {x:W*0.62,y:H*0.12,w:12,h:65,r:-0.18},{x:W*0.78,y:H*0.08,w:8,h:50,r:-0.25},
+      {x:W*0.35,y:H*0.75,w:9,h:48,r:0.12},{x:W*0.55,y:H*0.8,w:13,h:60,r:0.1},
+    ];
+    stripes.forEach(s=>{
+      ctx.save();ctx.translate(s.x,s.y);ctx.rotate(s.r);
+      const g=ctx.createLinearGradient(-s.w,0,s.w,0);
+      g.addColorStop(0,'rgba(0,0,0,0)');g.addColorStop(0.4,'rgba(15,5,0,0.65)');
+      g.addColorStop(0.6,'rgba(15,5,0,0.65)');g.addColorStop(1,'rgba(0,0,0,0)');
+      ctx.fillStyle=g;ctx.beginPath();ctx.ellipse(0,s.h/2,s.w,s.h/2,0,0,Math.PI*2);ctx.fill();ctx.restore();
+    });
+    const cx=W*0.72,cy=H*0.44,sc=Math.min(W,H)*0.75;
+    const glow=ctx.createRadialGradient(cx,cy,0,cx,cy,sc*0.5);
+    glow.addColorStop(0,'rgba(190,90,15,0.22)');glow.addColorStop(1,'rgba(0,0,0,0)');
+    ctx.fillStyle=glow;ctx.beginPath();ctx.ellipse(cx,cy,sc*0.5,sc*0.48,0,0,Math.PI*2);ctx.fill();
+    const hg=ctx.createRadialGradient(cx,cy-sc*0.05,sc*0.04,cx,cy,sc*0.4);
+    hg.addColorStop(0,'rgba(170,80,18,0.5)');hg.addColorStop(1,'rgba(0,0,0,0)');
+    ctx.fillStyle=hg;ctx.beginPath();ctx.ellipse(cx,cy,sc*0.4,sc*0.38,0,0,Math.PI*2);ctx.fill();
+    function ear(ex,ey,flip){
+      ctx.save();ctx.translate(ex,ey);ctx.scale(flip,1);
+      ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(-sc*0.11,-sc*0.17);ctx.lineTo(-sc*0.22,0);ctx.closePath();
+      ctx.fillStyle='rgba(150,65,12,0.42)';ctx.fill();ctx.restore();
+    }
+    ear(cx-sc*0.2,cy-sc*0.26,1);ear(cx+sc*0.2,cy-sc*0.26,-1);
+    [[-.14,-.04],[.14,-.04]].forEach(([ex,ey])=>{
+      ctx.save();ctx.translate(cx+ex*sc,cy+ey*sc);
+      ctx.beginPath();ctx.ellipse(0,0,sc*0.07,sc*0.05,0,0,Math.PI*2);ctx.fillStyle='rgba(210,150,35,0.65)';ctx.fill();
+      ctx.beginPath();ctx.ellipse(0,0,sc*0.016,sc*0.044,0,0,Math.PI*2);ctx.fillStyle='rgba(8,2,0,0.9)';ctx.fill();
+      ctx.beginPath();ctx.ellipse(sc*0.018,-sc*0.01,sc*0.01,sc*0.007,-0.4,0,Math.PI*2);ctx.fillStyle='rgba(255,225,170,0.8)';ctx.fill();
+      ctx.restore();
+    });
+    ctx.beginPath();ctx.moveTo(cx,cy+sc*0.08);ctx.lineTo(cx-sc*0.038,cy+sc*0.058);ctx.lineTo(cx+sc*0.038,cy+sc*0.058);ctx.closePath();
+    ctx.fillStyle='rgba(150,55,25,0.6)';ctx.fill();
+    ctx.beginPath();ctx.moveTo(cx,cy+sc*0.08);ctx.lineTo(cx,cy+sc*0.125);
+    ctx.strokeStyle='rgba(70,18,4,0.55)';ctx.lineWidth=sc*0.012;ctx.lineCap='round';ctx.stroke();
+    [-1,1].forEach(d=>{
+      ctx.beginPath();ctx.moveTo(cx+d*sc*0.048,cy+sc*0.125);ctx.lineTo(cx+d*sc*0.025,cy+sc*0.19);ctx.lineTo(cx+d*sc*0.07,cy+sc*0.19);ctx.closePath();
+      ctx.fillStyle='rgba(235,210,170,0.7)';ctx.fill();
+    });
+  }
+  draw();window.addEventListener('resize',draw);setTimeout(draw,80);
+}
+</script>
+</body>
+</html>
